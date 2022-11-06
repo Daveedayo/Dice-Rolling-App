@@ -1,9 +1,74 @@
 import random 
 
+DICE_ART = {
+    1: (
+        
+        "┌─────────┐",
+        "│         │",
+        "│    ●    │",
+        "│         │",
+        "└─────────┘",
+    ),
+
+    2: (
+
+        "┌─────────┐",
+        "│  ●      │",
+        "│         │",
+        "│      ●  │",
+        "└─────────┘",
+    ),
+
+    3: (
+
+        "┌─────────┐",
+        "│  ●      │",
+        "│    ●    │",
+        "│      ●  │",
+        "└─────────┘",
+    ),
+
+    4: (
+
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│         │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+
+    5: (
+
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│    ●    │",
+        "│  ●   ●  │",
+        "└─────────┘", 
+    ),
+
+    6: (
+
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "└─────────┘", 
+    )
+
+}
+
+DICE_HEIGHT = len(DICE_ART[1])
+DICE_WIDTH = len(DICE_ART[1][0])
+DICE_FACE_SEPERATOR = " "
+
+def generate_dice_faces_diagram(dice_values):
+    pass 
+
 def roll_dice(num_dice):
     roll_results = []
 
     for _ in range(num_dice):
+        #print(_)
         roll = random.randint(1, 6)
         roll_results.append(roll)
 
