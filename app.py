@@ -57,40 +57,12 @@ DICE_ART = {
 
 }
 
-DICE_HEIGHT = 5
-DICE_WIDTH = 11
+DICE_HEIGHT = len(DICE_ART[1])
+DICE_WIDTH = len(DICE_ART[1][0])
+DICE_FACE_SEPERATOR = " "
 
 def generate_dice_faces_diagram(dice_values):
-
-    dice_faces = _get_dice_faces(dice_values)
-    dice_faces_rows = _generate_dice_faces_rows(dice_faces)
-
-    # Generate header with the word "RESULTS" centered
-
-    width = len(dice_faces_rows[0])
-    diagram_header = " RESULTS ".center(width, "_")
-
-    dice_faces_diagram = "\n".join([diagram_header] + dice_faces_rows)
-
-    return dice_faces_diagram
-
-def _get_dice_faces(dice_values):
-    dice_faces = []
-    for value in dice_values:
-        dice_faces.append(DICE_ART[value])
-
-    return dice_faces
-
-def _generate_dice_faces_rows(dice_faces):
-    dice_faces_rows = []
-    for row_idx in range(DICE_HEIGHT):
-        row_components = []
-        for die in dice_faces:
-            row_components.append(die[row_idx])
-        row_string = " ".join(row_components)
-        dice_faces_rows.append(row_string) 
-
-    return dice_faces_rows
+    pass 
 
 def roll_dice(num_dice):
     roll_results = []
@@ -119,11 +91,5 @@ num_dice = parse_input(num_dice_input)
 #Roll the dice
 roll_results = roll_dice(num_dice)
 
-# Generate the ASCII diagram of dice faces
-dice_faces_diagram = generate_dice_faces_diagram(roll_results)
-
-# Display the diagram
-print(f"\n{dice_faces_diagram}")
-
 #Test the result with this line of code to see how it works
-#print(roll_results)
+print(roll_results)
